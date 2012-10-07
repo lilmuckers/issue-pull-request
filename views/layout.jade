@@ -1,0 +1,24 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/lib/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div.navbar.navbar-inverse.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          a.brand(href='/') #{title}
+          a.brand.user(href=user.html_url)= user.login
+            img(src=user.avatar_url, width='35px')
+    div.container
+      div.content!= body
+      
+      footer
+        p &copy; Patrick McKinley 2012
+    
+    
+    script(type='text/javascript', src='http://code.jquery.com/jquery-latest.js');
+    script(type='text/javascript', src='/lib/bootstrap/js/bootstrap.min.js');
+    script(type='text/javascript', src='/javascripts/github.js');
+              `

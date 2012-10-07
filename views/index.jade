@@ -1,0 +1,57 @@
+div.row.page-header
+  div.span4
+    h2 Head
+  div.span8
+    h2 Base
+
+form(method="post", id="pullForm")
+  div.row
+    div.span12.alerts
+      
+
+  div.row
+    div.span4
+      h3 1. Choose Fork
+      div.btn-group(id="fork-select")
+        a.btn.dropdown-toggle.btn-large(data-toggle="dropdown")  Choose Fork
+          span.caret.pull-right
+        ul.dropdown-menu
+          each fork in forks
+            li(data-object=fork.full_name)
+              a(href="#")= fork.full_name
+              
+    div.span8.hide.base-branch
+      h3 3. Choose Base branch
+        small.pull-right 
+          a(href="#") 
+      div.btn-group(id="base-branch-select")
+        a.btn.dropdown-toggle.btn-large(data-toggle="dropdown")  Choose Branch
+          span.caret.pull-right
+        ul.dropdown-menu
+  
+  div.row
+    div.span4.hide.head-branch
+      h3 2. Choose Head Branch
+      div.btn-group(id="head-branch-select")
+        a.btn.dropdown-toggle.btn-large(data-toggle="dropdown")  Choose Branch
+          span.caret.pull-right
+        ul.dropdown-menu
+    
+    div.span8.hide.issues
+      h3 4. Select Issue
+        small.pull-right Only lists open issues assigned to you (
+          a(href="#") issues
+          )
+      div.btn-group(id="issue-select")
+        a.btn.dropdown-toggle.btn-large(data-toggle="dropdown")  Select Issue
+          span.caret.pull-right
+        ul.dropdown-menu
+        
+  div.row
+    div.span12.hide.summery
+    
+  div.row
+    div.span12.hide.submit
+      h3 5. ...
+      div.btn-group(id="finish")
+        button.btn.btn-superlarge.btn-success.disabled(disabled) Finish!
