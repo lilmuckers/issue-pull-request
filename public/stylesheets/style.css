@@ -66,7 +66,10 @@ html, body {
 }
 
 .span4 .dropdown-menu{
-  width: 287px;
+  width: 260px;
+}
+.span8 .dropdown-menu{
+  width: 590px;
 }
 .dropdown-menu .selected{
   background-color: #eee;
