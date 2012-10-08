@@ -1,7 +1,7 @@
 div.row.page-header
-  div.span4
+  div.span5
     h2 Head
-  div.span8
+  div.span7
     h2 Base
 
 form(method="post", id="pullForm")
@@ -10,8 +10,9 @@ form(method="post", id="pullForm")
       
 
   div.row
-    div.span4
+    div.span5
       h3 1. Choose Fork
+        i.icon-question-sign
       div.btn-group(id="fork-select")
         a.btn.dropdown-toggle.btn-large(data-toggle="dropdown")  Choose Fork
           span.caret.pull-right
@@ -25,8 +26,9 @@ form(method="post", id="pullForm")
           a(href="https://help.github.com/articles/fork-a-repo") this 
           | helpful guide.
               
-    div.span8.hide.base-branch
+    div.span7.hide.base-branch
       h3 3. Choose Base branch
+        i.icon-question-sign
         small.pull-right 
           a(href="#") 
       div.btn-group(id="base-branch-select")
@@ -40,22 +42,24 @@ form(method="post", id="pullForm")
           | however, there might be occasions where you'll be merging elsewhere.
   
   div.row
-    div.span4.hide.head-branch
+    div.span5.hide.head-branch
       h3 2. Choose Head Branch
+        i.icon-question-sign
       div.btn-group(id="head-branch-select")
         a.btn.dropdown-toggle.btn-large(data-toggle="dropdown")  Choose Branch
           span.caret.pull-right
         ul.dropdown-menu
-    div.tooltip.hide
-      h3 Choose a Branch
-      p This is a branch that you have worked on and pushed to your fork on 
-        strong GitHub 
-        | . If you have performed all your work on your repositories 
-        strong master 
-        | branch, then this is a problem. You should arrange the work into its own branch to facilitate an easy merge.
+      div.tooltip.hide
+        h3 Choose a Branch
+        p This is a branch that you have worked on and pushed to your fork on 
+          strong GitHub 
+          | . If you have performed all your work on your repositories 
+          strong master 
+          | branch, then this is a problem. You should arrange the work into its own branch to facilitate an easy merge.
     
-    div.span8.hide.issues
+    div.span7.hide.issues
       h3 4. Select Issue
+        i.icon-question-sign
         small.pull-right Only lists open issues assigned to you (
           a(href="#") issues
           )

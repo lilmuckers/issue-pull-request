@@ -48,20 +48,22 @@ GitHub.prototype.initialise = function(){
   this.issues.select.bind('selection', $.proxy(this.issueSelect, this));
   
   this.finishButton.button.click($.proxy(this.submitData, this));
-  /*
-  this.formatTooltip(this.forkSelect, 'right');
-  this.formatTooltip(this.baseBranch.select, 'left');
-  this.formatTooltip(this.headBranch.select, 'right');
-  this.formatTooltip(this.issues.select, 'left');*/
+  
+  this.formatTooltips();
 }
 
-GitHub.prototype.formatTooltip = function(button, position){
-  button.popover({
-    placement: position,
-    trigger: 'hover',
-    title: button.next().find('h3').html(),
-    content: button.next().find('p').html()
-  });
+GitHub.prototype.formatTooltips = function(){
+  var tooltipAnchors = $('h3 i');
+  
+  for(var k in tooltipAnchors){
+    var anchor = $(tooltipAnchors[k]);
+    anchor.popover({
+      placement: 'bottom',
+      trigger: 'hover',
+      title: anchor.parent().parent().find('div.tooltip h3').html(),
+      content: anchor.parent().parent().find('div.tooltip p').html()
+    });
+  }
 }
 
 GitHub.prototype.baseBranchSelect = function(){

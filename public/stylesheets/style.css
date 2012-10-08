@@ -55,21 +55,21 @@ html, body {
   padding-left: 5px;
 }
 
-.span4 .btn-large{
-  width: 260px;
+.span5 .btn-large{
+  width: 350px;
   text-align: left;
 }
 
-.span8 .btn-large{
-  width: 590px;
+.span7 .btn-large{
+  width: 510px;
   text-align: left;
 }
 
-.span4 .dropdown-menu{
-  width: 260px;
+.span5 .dropdown-menu{
+  width: 350px;
 }
-.span8 .dropdown-menu{
-  width: 590px;
+.span7 .dropdown-menu{
+  width: 510px;
 }
 .dropdown-menu .selected{
   background-color: #eee;
@@ -107,4 +107,8 @@ h3 small{
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
           box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+h3 i{
+  margin: 8px !important;
 }
