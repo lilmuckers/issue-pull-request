@@ -1,7 +1,7 @@
 var express = require('express');
 var app = module.exports = express.createServer();
 var CONFIG = require('config');
-var GitHub = require('github');
+var GitHub = require('githubber');
 var cookieSecret = 'slkgfalsudifglaigudsfg';
 var MemStore = express.session.MemoryStore;
 
