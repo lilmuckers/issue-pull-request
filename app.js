@@ -49,14 +49,39 @@ app.all('/', function(req, res){
           forks.push(repos[i]);
         }
       }
-      res.render('index', {
-        title: 'Pull Request Converter',
-        user: user,
-        forks: forks
+      
+      req.GitHub.orgs.list(null, function(err, orgs){
+        
+        getOrgRepos(req, orgs, forks, function(foundForks) {
+          res.render('index', {
+            title: 'Pull Request Converter',
+            user: user,
+            forks: foundForks
+          }); 
+        });
       });
     });
   });
 });
+
+function getOrgRepos(req, orgs, forks, callback)
+{
+  var o = orgs.pop().login;
+  req.GitHub.repos.listOrg(o, function(err, repos) {
+    for(var i in repos){
+      if(repos[i].fork){
+        forks.push(repos[i]);
+      }
+    }
+    
+    if(orgs.length == 0) {
+      console.log(forks);
+      callback(forks);
+    } else {
+      getOrgRepos(req, orgs, forks, callback)
+    }
+  });
+}
 
 app.post('/repo-select', function(req, res){
   //got the repo
