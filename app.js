@@ -100,7 +100,7 @@ app.post('/repo-select', function(req, res){
     
     //then get the repo branches
     req.GitHub.repos.branches(headRepo, function(err, headBranches){
-      response.head.branches = headBranches;
+      response.head.branches = headBranches.reverse();
       //get the parent info
       req.GitHub.repos.info(headRepo.parent, function(err, baseRepo){
         response.base.repo = baseRepo;
